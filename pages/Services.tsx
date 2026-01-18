@@ -1,6 +1,5 @@
 
 import React from 'react';
-// Fix: Added missing Link import from react-router-dom
 import { Link } from 'react-router-dom';
 import Typewriter from '../components/Typewriter';
 import { CONTACT_INFO } from '../constants';
@@ -9,98 +8,110 @@ const Services: React.FC = () => {
   const services = [
     {
       id: 1,
-      icon: 'fa-award',
+      icon: 'fa-hand-holding-dollar',
       title: 'Reabilitação de Crédito',
-      desc: 'Um serviço 360º para quem precisa voltar ao mercado. Resolvemos desde restrições internas em bancos até apontamentos públicos.',
-      includes: ['Análise de Rating Bancário', 'Blindagem de CPF/CNPJ', 'Negociação de Dívidas Ativas', 'Consultoria de Reciclagem Financeira'],
-      cta: 'Iniciar Agora'
+      problem: 'Seu crédito está "queimado" por erros do passado?',
+      benefit: 'Limpamos seu histórico e criamos uma blindagem legal que te protege de cobranças abusivas e te recoloca no topo do mercado.',
+      items: ['Blindagem de CPF/CNPJ', 'Remoção de Gravames', 'Auditoria de Juros', 'Poder de Compra Restaurado'],
+      color: 'blue'
     },
     {
       id: 2,
-      icon: 'fa-shield-check',
+      icon: 'fa-user-check',
       title: 'Limpa Nome Definitivo',
-      desc: 'Atuamos legalmente para que seu nome saia dos cadastros de inadimplentes, permitindo que você recupere sua paz.',
-      includes: ['Baixa em Cartórios', 'Exclusão de SPC/Serasa', 'Protocolo de Limpeza Legal', 'Certidões de Nada Consta'],
-      cta: 'Limpar Nome'
+      problem: 'O SPC e o Serasa não te deixam dormir em paz?',
+      benefit: 'Não é apenas pagar dívidas. É regularizar sua situação de forma definitiva para que seu nome brilhe novamente nos registros.',
+      items: ['Baixa em 72h úteis*', 'Ação contra Negativação Indevida', 'Negociação Inteligente', 'Paz de Espírito'],
+      color: 'green'
     },
     {
       id: 3,
-      icon: 'fa-landmark',
-      title: 'Regularização Bacen (SCR)',
-      desc: 'Corrigimos as "listas negras" do Banco Central que impedem financiamentos mesmo com o nome limpo.',
-      includes: ['Correção de Prejuízos SCR', 'Análise de Registrato', 'Tratativas Administrativas', 'Relatórios de Evolução'],
-      cta: 'Regularizar SCR'
+      icon: 'fa-building-columns',
+      title: 'Bacen & Registrato',
+      problem: 'Nome limpo, mas crédito negado? A culpa é do Bacen.',
+      benefit: 'Limpamos seu "histórico de prejuízo" nos registros do Banco Central, a barreira secreta que impede seus financiamentos.',
+      items: ['Remoção de Prejuízo SCR', 'Correção do Registrato', 'Tratativa Jurídica Direta', 'Histórico Bancário Impecável'],
+      color: 'slate'
     },
     {
       id: 4,
-      icon: 'fa-chart-line-up',
-      title: 'Turbo Score & Rating',
-      desc: 'Elevamos sua pontuação através de técnicas de comportamento financeiro e correção de dados cadastrais.',
-      includes: ['Ativação de Cadastro Positivo', 'Remoção de Consultas Excessivas', 'Rating de Aprovação Bancária', 'Guia de Manutenção de Score'],
-      cta: 'Subir Score'
+      icon: 'fa-chart-simple',
+      title: 'Master Score & Rating',
+      problem: 'Seu score não sobe nem com as contas em dia?',
+      benefit: 'Aplicamos engenharia financeira para turbinar sua pontuação e melhorar seu rating interno nos bancos privados.',
+      items: ['Aumento Exponencial', 'Remoção de Consultas', 'Atualização Cadastral', 'Rating AA Garantido*'],
+      color: 'blue'
     }
   ];
 
   return (
     <div className="pt-24 min-h-screen pb-32 bg-white">
-      {/* Dynamic Header */}
-      <section className="bg-slate-950 py-32 relative overflow-hidden text-white">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 skew-x-12 translate-x-1/4 blur-3xl"></div>
-        <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-600 text-[10px] font-black tracking-widest uppercase mb-8">Nossas Soluções</div>
-          <h1 className="text-5xl md:text-8xl font-black mb-10 leading-none tracking-tighter">
-            Estratégias de <span className="text-blue-500">Elite</span> para o seu crédito.
-          </h1>
-          <p className="text-slate-400 text-xl md:text-2xl max-w-3xl font-medium leading-relaxed">
-            Não fazemos promessas vazias. Aplicamos a lei e a técnica para garantir que você tenha as chaves da sua vida financeira novamente.
-          </p>
+      {/* Persuasive Header */}
+      <section className="relative py-32 bg-slate-950 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/20 blur-[150px]"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-10 leading-none tracking-tighter">
+              A chave para o seu <span className="text-blue-500 italic">"Sim"</span> bancário.
+            </h1>
+            <p className="text-slate-400 text-xl md:text-3xl font-medium leading-relaxed max-w-2xl">
+              Nossas soluções foram desenhadas para quem não aceita mais as amarras do sistema financeiro.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Detailed Services */}
-      <section className="container mx-auto px-6 -mt-20 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      {/* Service Cards Refined */}
+      <section className="container mx-auto px-6 -mt-24 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {services.map((service) => (
-            <div key={service.id} className="bg-white border border-slate-100 rounded-[60px] p-10 md:p-16 shadow-2xl shadow-slate-200/40 hover:shadow-blue-600/20 transition-all duration-500 group">
-              <div className="flex flex-col md:flex-row gap-12 items-start">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-[40px] bg-slate-50 flex items-center justify-center text-5xl text-blue-600 shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6">
+            <div key={service.id} className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl border border-slate-100 hover:shadow-blue-500/10 transition-all group overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                <i className={`fa-solid ${service.icon} text-[15rem]`}></i>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center text-3xl text-blue-600 mb-10 group-hover:scale-110 transition-transform">
                   <i className={`fa-solid ${service.icon}`}></i>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-black text-slate-900 mb-6 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-                  <p className="text-slate-600 mb-10 leading-relaxed text-lg font-medium">{service.desc}</p>
-
-                  <div className="grid grid-cols-1 gap-4 mb-12">
-                    {service.includes.map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 text-slate-500 font-bold text-sm">
-                        <div className="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-[10px]">
-                          <i className="fa-solid fa-check"></i>
-                        </div>
-                        {item}
+                
+                <h3 className="text-4xl font-black text-slate-900 mb-2">{service.title}</h3>
+                <p className="text-blue-600 font-bold mb-8 italic">{service.problem}</p>
+                <p className="text-slate-500 text-xl leading-relaxed mb-12 font-medium">{service.benefit}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+                  {service.items.map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 text-slate-800 font-black text-sm">
+                      <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[10px]">
+                        <i className="fa-solid fa-check"></i>
                       </div>
-                    ))}
-                  </div>
-
-                  <a
-                    href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
-                    className="inline-flex items-center justify-center gap-4 bg-slate-900 hover:bg-blue-600 text-white font-black px-12 py-5 rounded-2xl w-full sm:w-auto transition-all shadow-xl active:scale-95"
-                  >
-                    <i className="fa-brands fa-whatsapp text-2xl"></i>
-                    {service.cta}
-                  </a>
+                      {item}
+                    </div>
+                  ))}
                 </div>
+
+                <a
+                  href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Gostaria%20de%20saber%20mais%20sobre%20${encodeURIComponent(service.title)}`}
+                  className="inline-flex items-center justify-center gap-4 bg-slate-900 hover:bg-blue-600 text-white font-black px-12 py-6 rounded-3xl w-full sm:w-auto transition-all shadow-xl hover:shadow-blue-600/40"
+                >
+                  <i className="fa-brands fa-whatsapp text-2xl"></i>
+                  Iniciar Análise Gratuita
+                </a>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Extra Trust Section */}
-      <section className="py-32 container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto bg-blue-50 rounded-[60px] p-12 md:p-24 border border-blue-100">
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter">Ficou com alguma dúvida?</h2>
-          <p className="text-slate-600 text-xl mb-12 font-medium">Cada caso é único. Nossos especialistas estão prontos para analisar sua situação gratuitamente.</p>
-          <Link to="/contato" className="bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white font-black px-12 py-5 rounded-2xl transition-all shadow-xl inline-block">Falar com Consultor</Link>
+      {/* Value Prop Final */}
+      <section className="py-32 container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto space-y-10">
+          <div className="inline-block px-6 py-2 rounded-full bg-green-50 text-green-600 text-[10px] font-black uppercase tracking-widest border border-green-100">Resultado Garantido ou seu Investimento de Volta*</div>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">O seu recomeço está a um clique de distância.</h2>
+          <p className="text-slate-500 text-xl font-medium">Pare de tentar sozinho. Use o método de quem é referência nacional.</p>
+          <div className="pt-6">
+            <Link to="/contato" className="bg-blue-600 text-white font-black px-16 py-7 rounded-[2rem] text-xl shadow-2xl hover:bg-blue-700 transition-all inline-block hover:-translate-y-2">Falar com Especialista</Link>
+          </div>
         </div>
       </section>
     </div>
