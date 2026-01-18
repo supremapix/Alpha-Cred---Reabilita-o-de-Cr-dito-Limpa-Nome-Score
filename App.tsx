@@ -11,13 +11,18 @@ import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import Watermark from './components/Watermark';
 
-// ScrollToTop component to ensure page starts at top on route change
-const ScrollToTop = () => {
+const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { pathname } = useLocation();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  return null;
+
+  return (
+    <div key={pathname} className="page-enter">
+      {children}
+    </div>
+  );
 };
 
 const App: React.FC = () => {
@@ -25,16 +30,15 @@ const App: React.FC = () => {
     <Router>
       <div className="min-h-screen flex flex-col bg-white overflow-x-hidden selection:bg-blue-600 selection:text-white">
         <Watermark />
-        <ScrollToTop />
         <Navbar />
         
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/servicos" element={<Services />} />
-            <Route path="/sobre" element={<About />} />
-            <Route path="/depoimentos" element={<Testimonials />} />
-            <Route path="/contato" element={<Contact />} />
+            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+            <Route path="/servicos" element={<PageWrapper><Services /></PageWrapper>} />
+            <Route path="/sobre" element={<PageWrapper><About /></PageWrapper>} />
+            <Route path="/depoimentos" element={<PageWrapper><Testimonials /></PageWrapper>} />
+            <Route path="/contato" element={<PageWrapper><Contact /></PageWrapper>} />
           </Routes>
         </main>
 

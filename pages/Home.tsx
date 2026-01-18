@@ -10,120 +10,115 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-blue-50/50"></div>
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 translate-x-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-50 via-white to-green-50/30"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 translate-x-24 blur-3xl"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-blue-700 text-xs font-black mb-8 tracking-widest uppercase">
-              <i className="fa-solid fa-shield-halved text-green-500"></i>
-              Sua reabilitação começa aqui
+          <div className="max-w-5xl">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white shadow-xl shadow-blue-500/5 border border-blue-100 text-blue-700 text-[10px] font-black mb-10 tracking-[0.2em] uppercase">
+              <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+              Líder Nacional em Reabilitação 2025
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] mb-8 tracking-tighter">
+            
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 leading-[0.85] mb-10 tracking-tighter">
               <Typewriter
-                words={["Recupere seu crédito hoje.", "Volte a ter poder de escolha.", "Limpe seu nome com segurança."]}
-                wait={4000}
+                words={["Dê um basta na negativação.", "Reconstrua sua vida financeira.", "Limpe seu nome hoje mesmo."]}
+                wait={4500}
               />
             </h1>
-            <p className="text-xl text-slate-600 mb-12 max-w-2xl leading-relaxed font-medium">
-              A ALPHA CRED utiliza inteligência jurídica e estratégica para restaurar seu CPF ou CNPJ, elevando seu score de forma definitiva e 100% legal.
+            
+            <p className="text-xl md:text-2xl text-slate-600 mb-14 max-w-3xl leading-relaxed font-medium">
+              Utilizamos estratégias jurídicas de ponta para remover apontamentos indevidos e restaurar sua credibilidade no mercado em tempo recorde.
             </p>
-            <div className="flex flex-col sm:flex-row gap-5">
+            
+            <div className="flex flex-col sm:flex-row gap-6">
               <a
                 href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-black px-10 py-5 rounded-2xl shadow-2xl shadow-blue-600/30 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1 active:scale-95"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-xl font-black px-12 py-6 rounded-2xl shadow-2xl shadow-blue-600/40 transition-all flex items-center justify-center gap-4 transform hover:-translate-y-1 active:scale-95"
               >
-                <i className="fa-brands fa-whatsapp text-2xl"></i>
+                <i className="fa-brands fa-whatsapp text-3xl"></i>
                 Consultoria Gratuita
               </a>
               <Link
                 to="/servicos"
-                className="bg-white hover:bg-slate-50 text-slate-900 text-lg font-bold px-10 py-5 rounded-2xl shadow-lg transition-all flex items-center justify-center border border-slate-200 active:scale-95"
+                className="bg-white hover:bg-slate-50 text-slate-900 text-xl font-black px-12 py-6 rounded-2xl shadow-xl transition-all flex items-center justify-center border border-slate-200 active:scale-95"
               >
-                Nossas Soluções
+                Ver Soluções
               </Link>
             </div>
 
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { icon: 'fa-gavel', label: '100% Legalizado' },
-                { icon: 'fa-bolt', label: 'Resultado Rápido' },
-                { icon: 'fa-user-lock', label: 'Sigilo Total' },
-                { icon: 'fa-handshake', label: 'Transparência' }
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-slate-500 font-bold text-sm">
-                  <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
-                    <i className={`fa-solid ${item.icon}`}></i>
+            {/* Trust Bar */}
+            <div className="mt-24 pt-10 border-t border-slate-100">
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Conformidade e Segurança:</p>
+              <div className="flex flex-wrap items-center gap-10 opacity-40 grayscale hover:grayscale-0 transition-all">
+                <div className="flex items-center gap-2 font-black text-xl"><i className="fa-solid fa-building-columns"></i> BANCO CENTRAL</div>
+                <div className="flex items-center gap-2 font-black text-xl"><i className="fa-solid fa-shield-halved"></i> LGPD READY</div>
+                <div className="flex items-center gap-2 font-black text-xl"><i className="fa-solid fa-gavel"></i> CÓDIGO CONSUMIDOR</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Numerical Proof */}
+      <section className="py-20 bg-slate-50 border-y border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            {[
+              { label: 'CPF/CNPJ Reabilitados', val: '12k+' },
+              { label: 'Aumento Médio Score', val: '+350pts' },
+              { label: 'Tempo de Atuação', val: '8 Anos' },
+              { label: 'Cidades Atendidas', val: '450+' }
+            ].map((stat, i) => (
+              <div key={i} className="text-center group">
+                <div className="text-4xl md:text-6xl font-black text-blue-600 mb-2 group-hover:scale-110 transition-transform">{stat.val}</div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Philosophy Section */}
+      <section className="py-32 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-20 items-center">
+            <div className="lg:w-1/2 relative">
+               <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+               <div className="relative z-10 bg-slate-900 rounded-[60px] p-10 md:p-20 text-white overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 p-10 opacity-10 text-9xl"><i className="fa-solid fa-quote-right"></i></div>
+                  <h3 className="text-3xl md:text-5xl font-black mb-10 leading-tight">"O crédito é a porta para a realização dos seus sonhos."</h3>
+                  <p className="text-slate-400 text-xl leading-relaxed mb-10">Na Alpha Cred, não apenas limpamos nomes; restauramos a dignidade de quem quer voltar a produzir, comprar e crescer.</p>
+                  <div className="flex items-center gap-5">
+                    <div className="w-16 h-1 bg-green-500"></div>
+                    <span className="font-black uppercase tracking-widest text-xs">Diretoria Alpha Cred</span>
                   </div>
-                  {item.label}
-                </div>
-              ))}
+               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Steps Section */}
-      <section className="py-32 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent opacity-10"></div>
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-24">
-            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">Processo em 3 Etapas</h2>
-            <p className="text-slate-400 text-xl">Simplicidade e eficácia para transformar sua realidade financeira.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { icon: 'fa-clipboard-list', title: 'Diagnóstico', desc: 'Análise minuciosa de todas as restrições e apontamentos no seu histórico.' },
-              { icon: 'fa-chess-knight', title: 'Estratégia', desc: 'Aplicação de protocolos jurídicos para remoção legal de apontamentos.' },
-              { icon: 'fa-circle-check', title: 'Conclusão', desc: 'Confirmação da limpeza e monitoramento do aumento do seu score.' }
-            ].map((step, i) => (
-              <div key={i} className="relative p-10 rounded-[40px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
-                <div className="absolute -top-6 left-10 w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-xl shadow-xl">
-                  {i + 1}
-                </div>
-                <div className="text-5xl text-blue-500 mb-8 mt-4 group-hover:scale-110 transition-transform">
-                  <i className={`fa-solid ${step.icon}`}></i>
-                </div>
-                <h3 className="text-2xl font-black mb-4">{step.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{step.desc}</p>
+            
+            <div className="lg:w-1/2 space-y-12">
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">Por que somos a escolha número 1?</h2>
+              <div className="space-y-8">
+                {[
+                  { icon: 'fa-check-double', title: 'Metodologia Jurídica Própria', desc: 'Protocolos exclusivos baseados no Código de Defesa do Consumidor.' },
+                  { icon: 'fa-user-tie', title: 'Consultoria Especializada', desc: 'Analistas reais, sem respostas automáticas ou robôs cansativos.' },
+                  { icon: 'fa-clock-rotate-left', title: 'Transparência em Tempo Real', desc: 'Você acompanha cada passo da sua reabilitação diretamente conosco.' }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 items-start group">
+                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm flex-shrink-0">
+                      <i className={`fa-solid ${item.icon}`}></i>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-black text-slate-900 mb-2">{item.title}</h4>
+                      <p className="text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter">Especialidades</h2>
-              <p className="text-slate-600 text-xl font-medium">Soluções focadas em resolver cada entrave do seu crédito.</p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: 'fa-trophy', title: 'Reabilitação', desc: 'Restauração completa do perfil de crédito.' },
-              { icon: 'fa-wand-magic-sparkles', title: 'Limpa Nome', desc: 'Exclusão legal de dívidas do CPF/CNPJ.' },
-              { icon: 'fa-building-columns', title: 'Bacen', desc: 'Regularização junto ao Banco Central.' },
-              { icon: 'fa-chart-line', title: 'Score', desc: 'Estratégias para elevação imediata da pontuação.' }
-            ].map((s, idx) => (
-              <div key={idx} className="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100 hover:shadow-2xl hover:border-blue-100 transition-all group">
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                  <i className={`fa-solid ${s.icon}`}></i>
-                </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4">{s.title}</h3>
-                <p className="text-slate-500 leading-relaxed mb-8">{s.desc}</p>
-                <Link to="/servicos" className="inline-flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
-                  Explorar <i className="fa-solid fa-chevron-right text-[10px]"></i>
-                </Link>
-              </div>
-            ))}
           </div>
         </div>
       </section>
