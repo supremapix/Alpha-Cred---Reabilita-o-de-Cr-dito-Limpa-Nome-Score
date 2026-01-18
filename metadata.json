@@ -1,0 +1,7 @@
+{
+  "name": "Alpha Cred - Reabilitação de Crédito",
+  "description": "Site profissional para a Alpha Cred, especializado em reabilitação de crédito, limpa nome e score financeiro.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
