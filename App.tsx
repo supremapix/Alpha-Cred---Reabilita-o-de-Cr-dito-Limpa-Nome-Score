@@ -28,22 +28,25 @@ const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden selection:bg-blue-600 selection:text-white">
+      <div className="min-h-screen flex flex-col bg-white overflow-x-hidden selection:bg-blue-600 selection:text-white relative">
         <Watermark />
-        <Navbar />
         
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-            <Route path="/servicos" element={<PageWrapper><Services /></PageWrapper>} />
-            <Route path="/sobre" element={<PageWrapper><About /></PageWrapper>} />
-            <Route path="/depoimentos" element={<PageWrapper><Testimonials /></PageWrapper>} />
-            <Route path="/contato" element={<PageWrapper><Contact /></PageWrapper>} />
-          </Routes>
-        </main>
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navbar />
+          
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="/servicos" element={<PageWrapper><Services /></PageWrapper>} />
+              <Route path="/sobre" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="/depoimentos" element={<PageWrapper><Testimonials /></PageWrapper>} />
+              <Route path="/contato" element={<PageWrapper><Contact /></PageWrapper>} />
+            </Routes>
+          </main>
 
-        <Footer />
-        <WhatsAppButton />
+          <Footer />
+          <WhatsAppButton />
+        </div>
       </div>
     </Router>
   );
